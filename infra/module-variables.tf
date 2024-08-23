@@ -48,6 +48,7 @@ variable "enabled_for_template_deployment" {
 
 variable "enabled_rbac_authorization" {
   type = bool
+  default = false
 }
 
 variable "network_acls" {
@@ -62,6 +63,7 @@ variable "network_acls" {
 
 variable "purge_protection_enabled" {
   type = bool
+  default = false
 }
 
 variable "public_network_access_enabled" {
