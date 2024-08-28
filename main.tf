@@ -1,5 +1,6 @@
 module "kv_name" {
-    source = "git@github.com:wyracocha/azure-naming-convention.git?ref=master"
+    source = "artifactoryibk.jfrog.io/terraform_ibk_modules__devsecops/ibk-naming-conventions-module/azure"
+    version = "0.0.0-rc.0"
     
     region = "eastus2"
     instance = "001"
