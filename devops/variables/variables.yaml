@@ -1,0 +1,11 @@
+variables:
+  terraform_version: "1.9.5"
+  artifactory_user: usrdsoart
+  artifactory_repo: terraform_ibk_modules
+  artifactory_module_name: "ibk-keyvault-module"
+  artifactory_module_provider: azure
+  artifactory_namespace: "devsecops"
+  tag_name: "v0.0.0"
+
+
+ads-terraform-azure-ibk-aks-module

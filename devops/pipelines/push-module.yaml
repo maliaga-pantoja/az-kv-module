@@ -1,0 +1,40 @@
+name: "$(Rev:rr)"
+
+# Trigger only on master/main branch and pull requests to master/main
+trigger:
+  branches:
+    include:
+      - master
+
+pr:
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: "ubuntu-22.04"
+
+resources:
+  repositories:
+    - repository: tftemplates
+      endpoint: bitbucket-generic-user
+      name: ibkteam/dso-iac-terraform-module-template
+      ref: refs/tags/v0.2.0
+      type: bitbucket
+
+variables:
+  - group: terraform-sample-global
+  - template: ../variables/variables.yaml
+
+stages:
+  - template: src/templates/ci-cd/stages-workflow.yaml@tftemplates
+    parameters:
+      terraform_version: $(terraform_version)
+      artifactory_user: $(artifactory_user)
+      artifactory_token: $(artifactory_token)
+      artifactory_repo: $(artifactory_repo)
+      artifactory_namespace: $(artifactory_namespace)
+      artifactory_module_name: $(artifactory_module_name)
+      artifactory_module_provider: $(artifactory_module_provider)
+      tag_name: $(tag_name)
+      environment_name: "PRD-IAC"
