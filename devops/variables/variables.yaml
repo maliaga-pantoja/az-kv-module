@@ -6,6 +6,3 @@ variables:
   artifactory_module_provider: azure
   artifactory_namespace: "devsecops"
   tag_name: "v0.0.0"
-
-
-ads-terraform-azure-ibk-aks-module
