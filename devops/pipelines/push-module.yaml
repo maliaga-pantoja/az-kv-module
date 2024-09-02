@@ -19,7 +19,7 @@ resources:
     - repository: tftemplates
       endpoint: bitbucket-generic-user
       name: ibkteam/dso-iac-terraform-module-template
-      ref: refs/tags/v0.2.0
+      ref: refs/tags/v0.3.0
       type: bitbucket
 
 variables:
